@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JENERIC | Performance Store</title>
+<style>
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#f7f8fc;background:#07090d;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#42131f 0%,#10121a 34%,#07090d 75%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(#ffffff07 1px,transparent 1px),linear-gradient(90deg,#ffffff07 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(#0007,transparent 80%)}
+header{border-bottom:1px solid #ffffff19;background:#0b0d13db;backdrop-filter:blur(18px);position:sticky;top:0;z-index:10}
+.wrap{max-width:1250px;margin:auto;padding:0 28px}.nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-size:28px;font-weight:950;letter-spacing:3px}.brand b{color:#ff344f}.sub{font-size:10px;letter-spacing:3px;color:#a7acba;margin-top:4px}
+.chip{border:1px solid #b12a42;color:#ff8a9a;background:#37121f88;border-radius:50px;padding:10px 15px;font-size:11px;font-weight:800;letter-spacing:1.5px}
+.hero{text-align:center;padding:86px 0 54px}.eyebrow{color:#ff5e75;letter-spacing:4px;font-size:12px;font-weight:850}.hero h1{font-size:clamp(40px,7vw,88px);line-height:1.02;letter-spacing:-3px;margin:18px 0}.hero h1 em{font-style:normal;color:#ff405b;text-shadow:0 0 50px #ff29474d}.muted{color:#a5adbc;line-height:1.65}.hero p{max-width:680px;margin:20px auto;font-size:16px}
+.heading{display:flex;justify-content:space-between;align-items:center;margin:12px 0 24px;gap:12px}.heading h2{font-size:23px;margin:0;letter-spacing:.5px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.card{min-height:475px;display:flex;flex-direction:column;padding:30px 26px;border-radius:23px;background:linear-gradient(155deg,#252735ee,#12151de8 54%,#11131a);border:1px solid #46404b;box-shadow:0 20px 50px #0007;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-7px);border-color:#ff4761}.card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,transparent,#ff3554,transparent)}
+.card.featured{border-color:#b33851;background:linear-gradient(155deg,#361b2b,#17131d 55%,#12131a)}.card .eyelabel{font-size:11px;letter-spacing:2px;font-weight:850;color:#ff899b}
+.symbol{width:78px;height:78px;border-radius:20px;background:#ff365019;border:1px solid #ff47614f;display:grid;place-items:center;font-size:40px;margin:26px 0}
+.card h3{font-size:24px;margin:0 0 10px;line-height:1.15}.card p{font-size:14px;line-height:1.65;color:#b6bdcb;margin:0 0 16px}
+.features{padding:0;list-style:none;margin:0 0 24px;color:#d4d8e1;font-size:13px;line-height:2}.features li:before{content:"✓";color:#ff536b;margin-right:9px}
+.bottom{margin-top:auto}.price{font-size:30px;font-weight:900;margin:0 0 18px}.price small{font-size:13px;color:#aeb5c3;font-weight:500}
+button{font:inherit;cursor:pointer}.book,.action{background:linear-gradient(100deg,#c91c39,#fa3e58);border:1px solid #ff5268;color:white;border-radius:11px;padding:16px 20px;font-size:13px;font-weight:900;letter-spacing:1px;width:100%;box-shadow:0 7px 24px #b5203b33}
+.book:hover,.action:hover{filter:brightness(1.15)}.book:disabled,.action:disabled{opacity:.45;cursor:not-allowed}
+.flow{margin:80px 0 100px}.flow h2{margin:0 0 10px}.request{border:1px solid #4c3440;background:linear-gradient(140deg,#211923,#0d1017);border-radius:24px;padding:32px;max-width:850px;margin:24px auto;box-shadow:0 20px 65px #0008}
+.steps{font-size:12px;color:#ff8195;font-weight:800;letter-spacing:2px}.request h2{font-size:28px;margin:12px 0}
+.summary{background:#0a0d14;border:1px solid #353946;border-radius:13px;padding:18px;margin:20px 0;line-height:1.8}
+label{display:block;font-size:13px;font-weight:700;margin:18px 0 8px}textarea{background:#0a0c12;border:1px solid #414553;color:white;border-radius:12px;padding:14px;width:100%;font:inherit;resize:vertical}
+a{color:#ff8396}.row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.outline{border:1px solid #545967;background:#1d202a;color:white;padding:13px 18px;border-radius:10px;font-weight:750;cursor:pointer}.notice{margin-top:14px;font-size:13px;color:#b8c0ce}.error{color:#ff9aa8}.success{color:#85dfb2}.hidden{display:none}footer{text-align:center;padding:30px;color:#828999;border-top:1px solid #ffffff16;font-size:12px}
+@media(max-width:900px){.cards{grid-template-columns:1fr}.card{min-height:0}.hero{padding-top:55px}.wrap{padding:0 18px}.request{padding:22px}.hero h1{letter-spacing:-1px}}
+</style></head><body>
+<header><div class="wrap nav"><div><div class="brand">J<b>ENERIC</b></div><div class="sub">PERFORMANCE ENGINEERING</div></div><span class="chip">● DISCORD BOOKING</span></div></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">ENGINEERED FOR PERFORMANCE</div><h1>UNLOCK YOUR<br><em>PC'S POTENTIAL.</em></h1><p class="muted">Professional PC optimization services designed for smoother gameplay, responsive systems, and personalized support. Choose your service and book through Discord.</p></section>
+<section id="services"><div class="heading"><h2>CHOOSE YOUR SERVICE</h2><span class="chip">03 PERFORMANCE OPTIONS</span></div>
+<div class="cards">
+<article class="card"><div class="eyelabel">01 / ESSENTIAL</div><div class="symbol">⚡</div><h3>BASIC<br>TWEAK PACK</h3><p>A streamlined optimization service focused on reducing unnecessary background activity and improving Windows gaming responsiveness without aggressive system changes.</p><ul class="features"><li>Windows performance tuning</li><li>Gaming & network configuration</li><li>Power-plan optimization</li><li>System health checks</li></ul><div class="bottom"><div class="price">$30 <small>/ service</small></div><button class="book" data-service="basic">BOOK NOW ↗</button></div></article>
+<article class="card featured"><div class="eyelabel">02 / MAXIMUM PERFORMANCE</div><div class="symbol">◆</div><h3>ADVANCED<br>TWEAK PACK</h3><p>Our more comprehensive optimization experience, combining advanced Windows and gaming configuration with supported, hardware-specific BIOS adjustments.</p><ul class="features"><li>Includes Basic optimizations</li><li>Advanced system tuning</li><li>Supported BIOS optimization</li><li>Hardware-specific configuration</li></ul><div class="bottom"><div class="price">$45 <small>/ service</small></div><button class="book" data-service="advanced">BOOK NOW ↗</button></div></article>
+<article class="card"><div class="eyelabel">03 / DIAGNOSTICS</div><div class="symbol">⌕</div><h3>PC<br>CHECKUP</h3><p>Understand your computer's current condition before making changes. We review hardware information, system health, configuration, and potential performance issues.</p><ul class="features"><li>Hardware & configuration review</li><li>Windows health assessment</li><li>Performance issue analysis</li><li>Personalized recommendations</li></ul><div class="bottom"><div class="price">CONTACT <small>/ for pricing</small></div><button class="book" data-service="checkup">BOOK NOW ↗</button></div></article>
+</div></section>
+<section class="flow" id="request" hidden><div class="request"><div class="steps">STEP 02 / DISCORD BOOKING</div><h2>COMPLETE YOUR REQUEST</h2><p class="muted">Connect your Discord account and open a private ticket. Your JENERIC support bot will then ask you seven hardware and gaming questions, one at a time.</p>
+<div class="summary" id="summary"></div><div class="row"><strong>Discord account</strong><span class="chip" id="account">Checking...</span></div>
+<p class="muted">You must be a member of the JENERIC Discord server to view your ticket.</p><div class="row"><button class="outline" id="login">CONNECT DISCORD ↗</button><button class="outline hidden" id="logout">SIGN OUT</button></div>
+<form id="ticketForm"><label for="notes">Additional requests (optional)</label><textarea id="notes" rows="3" maxlength="1500" placeholder="Describe any stutters, low FPS, or other issues..."></textarea>
+<p class="muted" style="font-size:13px">In Discord, the bot will ask: CPU, GPU, RAM type, RAM amount, RAM speed, motherboard, and main game. You can reply “skip” if unsure.</p>
+<button class="action" id="submit" disabled>CREATE DISCORD TICKET ↗</button></form><div id="message" class="notice" role="status" aria-live="polite"></div>
+<p class="muted" style="font-size:12px">Submitting a ticket does not charge you. Never share passwords or payment details in a ticket.</p>
+<button class="outline" id="back" type="button">← BACK TO SERVICES</button></div></section>
+</main><footer>© JENERIC • PC PERFORMANCE & SUPPORT</footer>
+<script>
+const catalog={basic:{name:"JENERIC Basic Tweak Pack",price:"$30"},advanced:{name:"JENERIC Advanced Tweak Pack",price:"$45"},checkup:{name:"JENERIC PC Checkup",price:"Pricing by staff"}};
+let chosen=null,signedIn=false,configured=false;
+const section=document.getElementById('request'),summary=document.getElementById('summary'),message=document.getElementById('message'),submit=document.getElementById('submit');
+document.querySelectorAll('[data-service]').forEach(b=>b.onclick=()=>{chosen=b.dataset.service;summary.textContent=catalog[chosen].name+" — "+catalog[chosen].price;section.hidden=false;section.scrollIntoView({behavior:"smooth"});update()});
+document.getElementById('back').onclick=()=>{section.hidden=true;document.getElementById('services').scrollIntoView({behavior:"smooth"})};
+document.getElementById('login').onclick=()=>location.assign('/auth/discord');
+document.getElementById('logout').onclick=async()=>{await fetch('/auth/logout',{method:'POST'});location.reload()};
+function update(){submit.disabled=!chosen||!signedIn||!configured}
+async function status(){try{const r=await fetch('/api/status');if(!r.ok)throw Error();const s=await r.json();signedIn=s.authenticated;configured=s.discordConfigured;document.getElementById('account').textContent=signedIn?'@'+s.user.username:'Not connected';document.getElementById('login').classList.toggle('hidden',signedIn);document.getElementById('logout').classList.toggle('hidden',!signedIn);if(!configured){message.textContent='Live Discord tickets will be available once the owner configures the bot and OAuth credentials on the server.';message.className='notice error'}}catch{message.textContent='Preview mode: the Discord backend is not running. Deploy the Node.js project to enable sign-in and tickets.';message.className='notice error'}update()}
+document.getElementById('ticketForm').addEventListener('submit',async e=>{e.preventDefault();if(!chosen||!signedIn||!configured)return;submit.disabled=true;message.textContent='Creating your ticket...';message.className='notice';try{const r=await fetch('/api/tickets',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({selected:[chosen],notes:document.getElementById('notes').value})});const d=await r.json();if(!r.ok)throw Error(d.error||'Ticket creation failed');message.replaceChildren();message.className='notice success';message.append('Ticket created! ');const a=document.createElement('a');a.href=d.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='OPEN DISCORD TICKET ↗';message.append(a)}catch(e){message.textContent=e.message;message.className='notice error'}finally{update()}});
+status();
+</script></body></html>

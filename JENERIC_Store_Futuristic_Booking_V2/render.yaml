@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: jeneric-store
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DISCORD_GUILD_ID
+        value: "859703238051233792"
+      - key: DISCORD_TICKET_CATEGORY_ID
+        value: "1563282718005923871"
